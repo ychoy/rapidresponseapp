@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Rapidchatapp</title>
-    <%= csrf_meta_tags %>
-
-    <link  rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
-<style>
+@import "bootstrap";
 *{
   margin: 0;
   padding: 0;
@@ -82,7 +73,7 @@
 border-radius: 0;}
 
 .jumbotron{
-  background-image: url("/assets/protestpic2.jpg");
+  background-image: url("images/protestpic2.jpg");
 background-color: #777;
 opacity: .6;
 height: 580px;
@@ -359,56 +350,3 @@ border-radius: 0;}
   }
 
 }
-</style>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-<body>
-
-<header>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#login">LOGIN</a></li>
-        <li><a href="#about">ABOUT US</a></li>
-       <!--  <li><a href="#">LANGUAGES</a></li>  -->
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
-
-
-  <div class=" container col-md-12 full-width">
-    <div class="jumbotron">
-      <div class="inner-content text-center col-md-12 col-sm-12">
-
-        <div class="member-content ">
-
-          <div class="member-request col-sm-12">
-            <div class="btn btn-request">I need help</div>
-          </div>
-
-          <div class="member-help  col-sm-12">
-            <div class="btn btn-help">I can help</div>
-          </div>
-        </div><!-- member-content-->
-      </div>
-    </div>
-
-<footer id="footer">
-
-</footer>
-</div><!-- container-->
-    <%= yield %>
-  </body>
-</html>
