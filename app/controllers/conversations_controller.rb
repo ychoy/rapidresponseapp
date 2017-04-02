@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
   before_action :set_conversation
+  
   def index
     @conversations = Conversation.public_channels
   end
