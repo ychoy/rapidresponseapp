@@ -1,6 +1,7 @@
 class Conversation < ApplicationRecord
   has_many :messages, dependent: :destroy
-  has_many :users, through: :messages
+  has_many :users, through: :memberships
+  has_many :memberships
 
   scope :public_channels, ->{ where(direct_message: false) }
   scope :direct_messages, ->{ where(direct_message: true) }
@@ -9,7 +10,7 @@ class Conversation < ApplicationRecord
 	 	user_firstnames = users.map(&:first_name).sort
 	 	title = "#{user_firstnames.join(", ")}" #TODO - brittle, fix it!
 
-	 	if conversation = conversation.direct_messages.where(title: title).first
+	 	if conversation = Conversation.direct_messages.where(title: title).first
 	 		conversation
 	 	else
 	 		# create a new conversation
