@@ -1,0 +1,49 @@
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <!-- ToDo - FIgure out address checker -->
+
+  <div class="field">
+    <%= f.label :under_18?, "Are you under 18?" %>
+    <%= f.check_box :under_18? %>
+  </div>
+
+  <div class="field">
+    <%= f.label :in_danger?, "Are you in danger?" %>
+    <%= f.check_box :in_danger? %>
+  </div>
+
+  <div class="field">
+    <%= f.label :in_contact_ICE_24_hours? "Were you in contact with ICE in the last 24 hours?" %>
+    <%= f.check_box :in_contact_ICE_24_hours? %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
