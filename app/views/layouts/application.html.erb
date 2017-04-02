@@ -333,7 +333,7 @@ border-radius: 0;}
 
   .member-content{
 
-      height: 130px;
+      height: 230px;
       /*width: 750px;*/
   }
 
@@ -357,6 +357,10 @@ border-radius: 0;}
 
      margin-left:5px ;
      margin-right:5px ;
+  }
+
+  .helper {
+    width: 60%;
   }
 
 }
@@ -393,23 +397,25 @@ border-radius: 0;}
     <div class="jumbotron">
       <div class="inner-content text-center col-md-12 col-sm-12">
 
-        <div class="member-content ">
-
-          <div class="member-request col-sm-12">
+        <div class="member-content">
+          <div class="member-request col-sm-12 first seeking">
             <div class="btn btn-request">I need help</div>
           </div>
 
-          <div class="member-help  col-sm-12">
+          <div class="member-help  col-sm-12 first giving">
             <div class="btn btn-help">I can help</div>
-          </div>
+          </div>    
         </div><!-- member-content-->
+
+
       </div>
     </div>
 
+      <%= yield %>
 <footer id="footer">
 
 </footer>
 </div><!-- container-->
-    <%= yield %>
+    
   </body>
 </html>
