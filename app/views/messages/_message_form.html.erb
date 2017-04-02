@@ -1,0 +1,9 @@
+<%= form_for message, remote: true, authenticity_token: true do |f| %>
+
+		<div class="field">
+		  <%= f.text_area :content, rows: "3", data: {textarea: "message"}, placeholder: "Type your message." %>		
+		</div>
+
+  <%= f.hidden_field :conversation_id, value: conversation.id %>
+  <%= f.submit "send", data: {send: "message"} %>
+<% end %>

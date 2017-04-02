@@ -12,24 +12,30 @@ User.create({
   first_name: 'Maribel',
   last_name: 'Cervantes',
   email: 'maribel@me.com',
-  password: '123456'
+  password: '123456',
+  helping: true,
+  title: 'Family Immigration Laywer'
 })
 
 User.create({
   first_name: 'Juanito',
   email: 'juanito@me.com',
-  password: '123456'
+  password: '123456',
+  helping: false,
 })
 
 User.create({
   first_name: 'Fatima',
   email:'fatima@me.com',
-  password:' 123456'
+  password:' 123456',
+  helping: false,
 })
 
 User.create({
   first_name: 'Zakir',
   last_name: 'Hussain',
   email: 'zakir@me.com',
-  password: '123456'
+  password: '123456',
+  helping: true,
+  title: 'Humanitarian Lawyer'
 })
