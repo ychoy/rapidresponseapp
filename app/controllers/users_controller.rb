@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def index
     @user = User.new
     @users = User.all
+    @expertises = Expertise.all
   end
 
   # GET /users/1
