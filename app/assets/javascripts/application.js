@@ -21,8 +21,6 @@ $(document).on('turbolinks:load', function() {
   $('.expertise').hide();
 
   $('.seeking').on('click', function(){
-    console.log(this);
-    console.log($('div.expertise'));
     $('.first').hide();
     $('div.expertise').show();
   });

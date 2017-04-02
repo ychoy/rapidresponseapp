@@ -1,5 +1,5 @@
 <div class="expertise">
-  <% expertises.where(profession_id: 1).each do |expertise| %>
+  <% expertises.where(profession_id: expertises.first.profession.id).each do |expertise| %>
     <div class="btn btn-default">
       <%= expertise.name %>
     </div>

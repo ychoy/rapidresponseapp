@@ -1,8 +1,17 @@
-<div class="container" id="box">
   <!-- <div class="btn btn-default first seeking">Seeking Help</div>
   <div class="btn btn-default first giving">Giving Help</div> -->
-  <%= render "clientformurgent", user: @user %>
-  <%= render "helperform", user: @user %>
-  <%= render "clientformgen", user: @user %>
+  <div class="inner-content text-center col-md-12 col-sm-12">
+    <div class="member-request col-sm-12 first seeking">
+      <div class="btn btn-request">I need help</div>
+    </div>
+
+    <div class="member-help  col-sm-12 first giving">
+      <div class="btn btn-help">I can help</div>
+    </div>    
+
+    <%= render "clientformurgent", user: @user %>
+    <%= render "helperform", user: @user %>
+    <%= render "clientformgen", user: @user %>
+    <%= render "expertises", expertises: @expertises %>
+  </div>
 <!-- <%#= render "expertises", expertises: @expertises %> -->
-</div>
