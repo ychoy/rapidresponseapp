@@ -2,8 +2,9 @@ class User < ApplicationRecord
   has_secure_password
   has_many :expertises
   has_many :messages
-  has_many :conversations, through: :messages
-  
+  has_many :memberships
+  has_many :conversations, through: :memberships
+
   validates :username, uniqueness: true, allow_nil: true
   validates :first_name, :email, presence: true
   validates :first_name, length: { in: 1..50 }

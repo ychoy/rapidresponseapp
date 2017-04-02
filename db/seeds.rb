@@ -39,3 +39,12 @@ User.create({
   helping: true,
   title: 'Humanitarian Lawyer'
 })
+
+
+Conversation.destroy_all
+
+conversations = [
+	{title: "Help"},
+]
+
+Conversation.create(conversations)
