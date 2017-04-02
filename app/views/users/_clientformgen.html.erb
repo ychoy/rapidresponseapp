@@ -1,3 +1,4 @@
+<div class="container gen">
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -11,77 +12,73 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :prefix %>
-    <%= f.text_field :prefix %>
+    <%= f.text_field :prefix, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.text_field :password, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :company %>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :biography %>
-    <%= f.text_field :biography %>
+    <%= f.text_field :biography, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :helping %>
-    <%= f.check_box :helping %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= f.label :under_18? %>
     <%= f.check_box :under_18? %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :in_danger? %>
     <%= f.check_box :in_danger? %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :in_contact_ICE_24_hours? %>
     <%= f.check_box :in_contact_ICE_24_hours? %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "btn btn-default"%>
   </div>
 <% end %>
+</div>
