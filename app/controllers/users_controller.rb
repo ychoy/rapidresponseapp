@@ -3,15 +3,22 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+  def search
+    @lawyer = User.first
+    expertise = Expertise.find_by_id(params[:id])
+    @users = UserExpertise.where(expertise_id: expertise)
+  end
+
   def index
     @user = User.new
-    @users = User.all
     @expertises = Expertise.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+
+
   end
 
   # GET /users/new
@@ -27,8 +34,13 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.password = (Random.rand() * 10000).floor.to_s
+    @user.helping = params[:helping]
       if @user.save
-        redirect_to root_path
+        term = params[:expertise].gsub!(/\s+/, '')
+        expertise = Expertise.find_by(name: term)
+        login(@user)
+        redirect_to search_path(expertise.id)
       end
   end
 
@@ -46,10 +58,6 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
@@ -60,6 +68,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :first_name, :last_name, :prefix, :email, :password_digest, :title, :company, :address, :biography, :profession, :helping, :under_18?, :in_danger?, :in_contact_ICE_24_hours?)
+      params.require(:user).permit(:username, :first_name, :last_name, :prefix, :email, :password_digest, :title, :company, :address, :biography, :profession, :helping, :under_18?, :danger?, :contact_ice_24_hours?)
     end
 end

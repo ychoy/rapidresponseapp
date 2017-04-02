@@ -26,6 +26,9 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('div.expertise div').on('click', function(){
+    console.log($(this));
+    console.log($(this).text())
+    $('#expertise').val($(this).text())
     $('div.urgent').show();
     $('div.expertise').hide();
   });

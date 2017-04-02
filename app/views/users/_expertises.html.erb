@@ -1,0 +1,8 @@
+<div class="expertise">
+  <% expertises.where(profession_id: expertises.first.profession.id).each do |expertise| %>
+    <div class="btn btn-default">
+      <%= expertise.name %>
+    </div>
+  <% end %>
+  <div class="btn btn-default">All</div>
+</div>
