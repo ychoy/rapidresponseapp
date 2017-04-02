@@ -1,35 +1,26 @@
 class ConversationsController < ApplicationController
-  has_many :messages, dependent: :destroy
-  has_many :users, through: :messages
+  before_action :set_conversation
+  def index
+    @conversations = Conversation.public_channels
+  end
 
-  def self.direct_message_for_users(users)
-	 	user_firstnames = users.map(&:first_name).sort
-	 	title = "#{user_firstnames.join(", ")}" #TODO - brittle, fix it!
+  def show
+    @conversations = Conversation.all
+    #includes method for eager loading
+    @conversation = Conversation.includes(:messages).find_by(id: params[:id])
+    @users = User.all
+    #allows new messages to be created
+    @message = Message.new
+  end
 
-	 	if conversation = conversation.direct_messages.where(title: title).first
-	 		conversation
-	 	else
-	 		# create a new conversation
-	 		conversation = Conversation.new(title: title, direct_message: true)
-	 		conversation.users = users
-	 		conversation.save
-	 		conversation
-	 	end
-	 end
+  private
 
-	 def all_members(conversation)
-		 conversation.users = users
-	 end
+  def set_conversation
+    @conversation = Conversation.find(params[:id])
+  end
 
-	 def member?(user)
-		 user.conversations.include?(self)
-	 end
+  def conversation_params
+    params.require(:conversation).permit(:id)
+  end
 
-	 def admin?(user)
-	 	return true if self.admin == user.id
-	 end
-
-	 def is_direct_message?
-	 	return self.direct_message
-	 end
 end
