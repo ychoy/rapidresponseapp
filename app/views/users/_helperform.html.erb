@@ -61,6 +61,8 @@
     <%= f.text_field :biography, class: "form-control" %>
   </div>
 
+  <%= hidden_field_tag(:helping, "true")%>
+
 
   <div class="actions">
     <%= f.submit "Submit", class: "btn btn-default" %>

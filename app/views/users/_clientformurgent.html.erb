@@ -35,17 +35,21 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :in_danger?, "Are you in danger?" %>
-      <%= f.check_box :in_danger? %>
+      <%= f.label :danger?, "Are you in danger?" %>
+      <%= f.check_box :danger? %>
     </div>
 
     <div class="form-group">
-      <%= f.label :in_contact_ICE_24_hours?, "Were you in contact with ICE in the last 24 hours?" %>
-      <%= f.check_box :in_contact_ICE_24_hours? %>
+      <%= f.label :contact_ice_24_hours?, "Were you in contact with ICE in the last 24 hours?" %>
+      <%= f.check_box :contact_ice_24_hours? %>
     </div>
 
+    <%= hidden_field_tag(:expertise, "", id: "expertise")%>
+
+    <%= hidden_field_tag(:helping, "false")%>
+
     <div class="actions">
-      <%= f.submit "Submit", class: "btn btn-default" %>
+      <%= f.submit "Submit", method: "post", class: "btn btn-default" %>
     </div>
   <% end %>
 </div>
