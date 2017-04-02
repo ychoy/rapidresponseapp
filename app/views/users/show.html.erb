@@ -26,11 +26,6 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
   <strong>Title:</strong>
   <%= @user.title %>
 </p>
@@ -50,10 +45,6 @@
   <%= @user.biography %>
 </p>
 
-<p>
-  <strong>Profession:</strong>
-  <%= @user.profession %>
-</p>
 
 <p>
   <strong>Helping:</strong>
@@ -67,12 +58,12 @@
 
 <p>
   <strong>In danger?:</strong>
-  <%= @user.in_danger? %>
+  <%= @user.danger? %>
 </p>
 
 <p>
   <strong>In contact ice 24 hours?:</strong>
-  <%= @user.in_contact_ICE_24_hours? %>
+  <%= @user.contact_ice_24_hours? %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
