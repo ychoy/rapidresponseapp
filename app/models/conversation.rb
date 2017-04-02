@@ -2,6 +2,9 @@ class Conversation < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :users, through: :messages
 
+  scope :public_channels, ->{ where(direct_message: false) }
+  scope :direct_messages, ->{ where(direct_message: true) }
+
   def self.direct_message_for_users(users)
 	 	user_firstnames = users.map(&:first_name).sort
 	 	title = "#{user_firstnames.join(", ")}" #TODO - brittle, fix it!
