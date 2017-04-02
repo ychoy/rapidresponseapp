@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index]
 
-  resources :conversations
+  get "/search/:id", to: "users#search", as: "search"
+
+  resources :conversations, except: [:edit, :update, :destroy]
 
   resources :messages, except: [:edit, :update, :destroy]
 
