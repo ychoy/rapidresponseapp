@@ -26,6 +26,8 @@ Rails.application.configure do
   config.assets.compile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+  #  TODO: add for production config.action_cable.url = 'wss://URL INSERT HERE .herokuapp.com/cable'
+  #  TODO: config.action_cable.allowed_request_origins = ['https://URL INSERT HERE .herokuapp.com']
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'

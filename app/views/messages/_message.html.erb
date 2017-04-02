@@ -1,0 +1,7 @@
+<div class="container">
+	<div class="row">
+			<strong><%= message.user.full_name %></strong>
+			<em><%= time_ago_in_words(message.created_at) %> ago</em>
+		<p><%= message.content %></p>
+	</div>
+</div>

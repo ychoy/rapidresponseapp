@@ -14,10 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require_tree ./channels
+
 $(document).on('turbolinks:load', function() {
   $('.info').hide();
   $('.expertise').hide();
-  
+
   $('.seeking').on('click', function(){
     $('.first').hide();
     $('div.expertise').show();
