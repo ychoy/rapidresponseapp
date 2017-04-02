@@ -28,10 +28,6 @@ class Conversation < ApplicationRecord
 		 user.conversations.include?(self)
 	 end
 
-	 def admin?(user)
-	 	return true if self.admin == user.id
-	 end
-
 	 def is_direct_message?
 	 	return self.direct_message
 	 end
