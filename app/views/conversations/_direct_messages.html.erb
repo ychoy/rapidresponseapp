@@ -1,0 +1,10 @@
+<div class="container">
+  <h3 class="text-center">Direct Messages</h3>
+  <ui>
+   <% (User.all - [current_user]).each do |user| %>
+	     <%= link_to user.first_name + " " + user.last_name, direct_message_path(user.id),
+        data: {behavior: "conversation-link", conversation_id:
+          Conversation.direct_message_for_users([current_user, user]).id }%>
+   <% end %>
+  </ui>
+</div>
