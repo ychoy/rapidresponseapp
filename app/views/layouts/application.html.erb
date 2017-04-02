@@ -18,7 +18,7 @@
   /*NAVIGATION*/
    .navbar {
       margin-bottom: 0;
-      background-color: #f4511e;
+      background-color: #778;
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -27,6 +27,7 @@
       border-radius: 0;
       font-family: Montserrat, sans-serif;
       max-height:150px;
+
   }
 
   .navbar li {
@@ -383,11 +384,11 @@ border-radius: 0;}
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      <a class="navbar-brand" href="/"><img style="width:90px; height:90px; position: absolute; top: -20px" src="https://files.slack.com/files-pri/T1038LNCA-F4U03SJ78/icon-o1-trans.png"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#login">LOGIN</a></li>
+        <li><a href="/login">LOGIN</a></li>
         <li><a href="#about">ABOUT US</a></li>
        <!--  <li><a href="#">LANGUAGES</a></li>  -->
       </ul>
@@ -399,6 +400,7 @@ border-radius: 0;}
 
   <div class=" container col-md-12 full-width">
     <div class="jumbotron">
+      <h1 style="color: black; margin-left: 129px; position: absolute; top:196px; text-align: center; color: #fff; text-shadow: 2px 2px 5px #000000">Assist Me <small style="color: #fff;">find quick free legal aid</small></h1>
       <%= yield %>
     </div>
   </div><!-- container-->
