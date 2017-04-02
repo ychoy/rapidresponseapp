@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402094452) do
+ActiveRecord::Schema.define(version: 20170402134755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,11 @@ ActiveRecord::Schema.define(version: 20170402094452) do
   end
 
   create_table "expertises", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "profession_id"
     t.string   "name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["profession_id"], name: "index_expertises_on_profession_id", using: :btree
-    t.index ["user_id"], name: "index_expertises_on_user_id", using: :btree
   end
 
   create_table "messages", force: :cascade do |t|
@@ -46,6 +44,15 @@ ActiveRecord::Schema.define(version: 20170402094452) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_expertises", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "expertise_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["expertise_id"], name: "index_user_expertises_on_expertise_id", using: :btree
+    t.index ["user_id"], name: "index_user_expertises_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,7 +77,8 @@ ActiveRecord::Schema.define(version: 20170402094452) do
 
   add_foreign_key "conversations", "users"
   add_foreign_key "expertises", "professions"
-  add_foreign_key "expertises", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "user_expertises", "expertises"
+  add_foreign_key "user_expertises", "users"
 end
