@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Prefix:</strong>
+  <%= @user.prefix %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @user.title %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @user.company %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @user.biography %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @user.profession %>
+</p>
+
+<p>
+  <strong>Helping:</strong>
+  <%= @user.helping %>
+</p>
+
+<p>
+  <strong>Under 18?:</strong>
+  <%= @user.under_18? %>
+</p>
+
+<p>
+  <strong>In danger?:</strong>
+  <%= @user.in_danger? %>
+</p>
+
+<p>
+  <strong>In contact ice 24 hours?:</strong>
+  <%= @user.in_contact_ICE_24_hours? %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
