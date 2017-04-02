@@ -1,5 +1,7 @@
 <div class="container">
-<%= render "clientformurgent", user: @user %>
-<%= render "helperform", user: @user %>
-<%= render "clientformgen", user: @user %>
+  <div class="btn btn-default seeking">Seeking Help</div>
+  <div class="btn btn-default giving">Giving Help</div>
+  <%= render "clientformurgent", user: @user %>
+  <%= render "helperform", user: @user %>
+  <%= render "clientformgen", user: @user %>
 </div>

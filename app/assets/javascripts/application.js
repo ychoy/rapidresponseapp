@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('turbolinks:load', function() {
+  $('.info').hide();
+  
+  $('.seeking').on('click', function(){
+    $('div.urgent').toggle()
+  })
+
+  $('.giving').on('click', function(){
+    $('div.helper').toggle()
+  })
+})
