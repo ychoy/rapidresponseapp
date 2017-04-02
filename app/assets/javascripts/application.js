@@ -16,12 +16,20 @@
 //= require_tree .
 $(document).on('turbolinks:load', function() {
   $('.info').hide();
+  $('.expertise').hide();
   
   $('.seeking').on('click', function(){
-    $('div.urgent').toggle()
-  })
+    $('.first').hide();
+    $('div.expertise').show();
+  });
+
+  $('div.expertise div').on('click', function(){
+    $('div.urgent').show();
+    $('div.expertise').hide();
+  });
 
   $('.giving').on('click', function(){
-    $('div.helper').toggle()
-  })
-})
+    $('.first').hide();
+    $('div.helper').show();
+  });
+});
